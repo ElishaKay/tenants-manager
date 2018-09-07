@@ -8,32 +8,32 @@
 }
 
 
-/* USER FORM */
+/* TENANT FORM */
 
-#user-form, #user-update-form {
+#tenant-form, #tenant-update-form {
 	margin-top: 35%;
 }
-#user-update-form .form-heading, #user-form .form-heading {
+#tenant-update-form .form-heading, #tenant-form .form-heading {
 	margin: 5%;
 	font-weight: bold;
 }
 
 
-#user-detail-table {
+#tenant-detail-table {
    margin-top: 10%;
 }
 
-#user-detail-table .panel-heading {
+#tenant-detail-table .panel-heading {
    font-weight: 700;
 }
-#user-detail-table .panel button.btn {
+#tenant-detail-table .panel button.btn {
 	margin-top: -6px;
 }
 
-/* USER EDIT AND DELETE BUTTONS */
+/* TENANT EDIT AND DELETE BUTTONS */
 
-.action-user-edit,
-.action-user-delete {
+.action-tenant-edit,
+.action-tenant-delete {
 	margin-left: 5px;
 	margin-right: 5px;
 	margin-top: -5px;
