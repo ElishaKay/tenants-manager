@@ -38,9 +38,26 @@
 		}
 
 		$scope.filterDebt = function(selectedSearch) {
-		    return function(tenant) {
-		        return tenant.debt != 0;
-		    }
+
+			switch(selectedSearch) {
+			    case 'allTenants':
+			        console.log('show all tenants')
+			        break;
+			    case 'tenantsWithDebt':
+			        return function(tenant) {
+		    	    	return tenant.debt != 0;
+		    		}
+			        break;
+			    case 'tenantsWithNoDebt':
+			        return function(tenant) {
+		    	    	return tenant.debt === 0;
+		    		}
+			        break;
+			    default:
+			        break;
+			}
+			console.log(selectedSearch);
+		    // 
 		}
 	}
 
