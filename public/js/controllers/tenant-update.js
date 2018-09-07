@@ -23,12 +23,18 @@
 		$scope.updateTenant = function () {
 			var oldName = tenant.name;
 			var oldEmail = tenant.email;
+			var oldPhone = tenant.phone;
+			var oldAddress = tenant.address;
+
 			var newName = $scope.tenant.name;
 			var newEmail = $scope.tenant.email;
-			var isTenantChanged = (oldName !== newName) || (oldEmail !== newEmail);
+			var newPhone = $scope.tenant.phone;
+			var newAddress = $scope.tenant.address;
+
+			var isTenantChanged = (oldName !== newName) || (oldEmail !== newEmail) || (oldAddress !== newAddress) || (oldPhone !== newPhone) ;
 
 			if (isTenantChanged) {
-				Tenant.update(newName, newEmail, tenantId)
+				Tenant.update(newName, newEmail, newPhone, newAddress, tenantId)
 				.then(function (data) {
 					$scope.isSuccess = data.isSuccess;
 					$scope.message = data.message

@@ -99,12 +99,16 @@ router.route('/')
  .put((req, res) => {
  	const tenantId = req.params.tenantId;
  	const body = req.body;
+ 	console.log('body of update request:',body)
 
- 	if ( body && body.name && body.email ) {
+ 	if ( body && body.name && body.email && body.address && body.phone) {
+ 		console.log('ran update func on server');
  		const query = {id: tenantId};
  		const update = {
  			name: body.name,
- 			email: body.email
+ 			email: body.email,
+ 			address: body.address,
+ 			phone: body.phone
  		};
 
  		Tenant.findOneAndUpdate(query, update, (err, tenant) => {
