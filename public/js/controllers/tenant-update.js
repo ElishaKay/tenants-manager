@@ -25,16 +25,18 @@
 			var oldEmail = tenant.email;
 			var oldPhone = tenant.phone;
 			var oldAddress = tenant.address;
+			var oldDebt = tenant.debt;
 
 			var newName = $scope.tenant.name;
 			var newEmail = $scope.tenant.email;
 			var newPhone = $scope.tenant.phone;
 			var newAddress = $scope.tenant.address;
+			var newDebt = $scope.tenant.debt;
 
-			var isTenantChanged = (oldName !== newName) || (oldEmail !== newEmail) || (oldAddress !== newAddress) || (oldPhone !== newPhone) ;
+			var isTenantChanged = (oldName !== newName) || (oldEmail !== newEmail) || (oldAddress !== newAddress) || (oldPhone !== newPhone) || (oldDebt !== newDebt) ;
 
 			if (isTenantChanged) {
-				Tenant.update(newName, newEmail, newPhone, newAddress, tenantId)
+				Tenant.update(newName, newEmail, newPhone, newAddress, newDebt, tenantId)
 				.then(function (data) {
 					$scope.isSuccess = data.isSuccess;
 					$scope.message = data.message

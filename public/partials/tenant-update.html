@@ -16,6 +16,9 @@
 					<input type="text" name="address" class="form-control" ng-model="tenant.address" ng-required="true">
 				</div>
 				<div class="form-group">
+					<input type="number" name="debt" class="form-control" ng-model="tenant.debt" ng-required="true">
+				</div>
+				<div class="form-group">
 					<button class="btn btn-primary btn-block" ng-disabled="tenantUpdateForm.$invalid || tenantUpdateForm.$pristine">SAVE</button>
 				</div>
 			</form>	

@@ -71,14 +71,15 @@
 			})
 		}
 
-		function update (name, email, phone, address, tenantId) {
+		function update (name, email, phone, address, debt, tenantId) {
 			if (tenantId) {
 				var apiUrl = '/api/tenants/' + tenantId;
 				var tenant = {
 					name: name,
 					email: email,
 					phone: phone,
-					address: address
+					address: address,
+					debt: debt
 				};
 				return $http.put(apiUrl, tenant)
 				.then(function (res) {

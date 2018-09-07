@@ -101,14 +101,15 @@ router.route('/')
  	const body = req.body;
  	console.log('body of update request:',body)
 
- 	if ( body && body.name && body.email && body.address && body.phone) {
+ 	if ( body && body.name && body.email && body.address && body.phone && body.debt) {
  		console.log('ran update func on server');
  		const query = {id: tenantId};
  		const update = {
  			name: body.name,
  			email: body.email,
  			address: body.address,
- 			phone: body.phone
+ 			phone: body.phone,
+ 			debt: body.debt
  		};
 
  		Tenant.findOneAndUpdate(query, update, (err, tenant) => {
