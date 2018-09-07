@@ -2,13 +2,13 @@
 (function () {
 	angular.module('myApp')
 
-	.controller('tenantListCtrl', ['$scope', '$location', 'Tenant', tenantListCtrl]);
+	.controller('tenantListCtrl', ['$scope', '$location', '$filter', 'Tenant', tenantListCtrl]);
 
-	function tenantListCtrl ($scope, $location, Tenant) {
+	function tenantListCtrl ($scope, $location, $filter, Tenant) {
 
 		Tenant.getAll()
 		.then(function (tenants) {
-			// console.log(tenants)
+			console.log(tenants)
 			$scope.tenants = tenants;
 		})
 
@@ -36,7 +36,6 @@
 			var tenantId = tenant.id;
 			$location.url('/tenants/edit/' + tenantId);
 		}
-
 	}
 
 })();
