@@ -8,10 +8,9 @@ const TenantSchema   = new Schema({
 	id: { type: String, default: uuid },
     name: String,
     email: String,
-    phoneNumber: Number,
+    phone: Number,
     address: String,
     debt: Number
-
 });
 
 const Tenant = mongoose.model('Tenant', TenantSchema);

@@ -43,7 +43,7 @@ router.route('/')
 	console.log('create-tenant post',body);
 	let resData = {};
 
-	if ( body && body.name && body.email ) {
+	if ( body && body.name && body.email && body.phone && body.address ) {
 		const tenant = new Tenant(body);
 		tenant.save((err, tenant) => {
 			if (err) return console.log(err);
