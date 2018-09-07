@@ -11,7 +11,7 @@
 		    <br>
 		    <br>
 
-			<a class="list-group-item" ng-repeat="tenant in tenants | startsWithA" ng-href="#!/tenants/profile/{{tenant.id}}" title="Click To See The Tenant Details"><strong>Name:</strong> {{tenant.name}}. <strong>Debt:</strong> {{tenant.debt}} 
+			<a class="list-group-item" ng-repeat="tenant in tenants | filter:filterDebt(selectedSearch)" ng-href="#!/tenants/profile/{{tenant.id}}" title="Click To See The Tenant Details"><strong>Name:</strong> {{tenant.name}}. <strong>Debt:</strong> {{tenant.debt}} 
 			    <button type="button" class="btn btn-info btn-sm pull-right action-tenant-edit" title="Click To Edit Tenant" ng-click="goToUpdateTenantView($event, tenant)">
 					<span class="glyphicon glyphicon-edit"></span>
 				</button>

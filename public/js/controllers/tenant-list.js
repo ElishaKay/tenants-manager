@@ -36,6 +36,12 @@
 			var tenantId = tenant.id;
 			$location.url('/tenants/edit/' + tenantId);
 		}
+
+		$scope.filterDebt = function(selectedSearch) {
+		    return function(tenant) {
+		        return tenant.debt != 0;
+		    }
+		}
 	}
 
 })();

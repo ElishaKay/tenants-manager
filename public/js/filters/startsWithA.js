@@ -2,8 +2,11 @@
 (function () {
 	angular.module('myApp')
 
-	.filter('startsWithA', function () {
+	.filter('startsWithA', function (selectedSearch) {
 	    return function (items) {
+	    	console.log('checking item', items)
+	    	console.log('selectedSearch in', selectedSearch)
+	    	
 	        var filtered = [];
 	        for (var i = 0; i < items.length; i++) {
 	            var item = items[i];
