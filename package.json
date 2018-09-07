@@ -1,7 +1,7 @@
 {
-  "name": "uv-angularjs-nodejs-mongodb-crud",
+  "name": "tenants-manager-app",
   "version": "1.0.0",
-  "description": "Bacis AngularJs-Nodejs-MongoDb CRUD operation using Mongoose NPM",
+  "description": "mongo-angularjs-nodejs",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -10,7 +10,8 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.4",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -20,15 +21,5 @@
   "scripts": {
     "test": "mocha --recursive",
     "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shivarajnaidu/uv-angularjs-nodejs-mongodb-crud.git"
-  },
-  "author": "yuvaraj",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shivarajnaidu/uv-angularjs-nodejs-mongodb-crud/issues"
-  },
-  "homepage": "https://github.com/shivarajnaidu/uv-angularjs-nodejs-mongodb-crud#readme"
+  }
 }
