@@ -10,7 +10,7 @@ const TenantSchema   = new Schema({
     email: String,
     phoneNumber: Number,
     address: String,
-    debt: 0
+    debt: Number
 
 });
 

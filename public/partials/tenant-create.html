@@ -3,11 +3,17 @@
 		<form id="tenant-form" ng-submit="createTenant()" name="tenantForm">
 			<h4 class="form-heading text-center">CREATE TENANT</h4>
 			<div class="form-group">
-				<input class="form-control" type="text" ng-model="tenant.name" name="name" placeholder="Enter Your Name" ng-required="true">
+				<input class="form-control" type="text" ng-model="tenant.name" name="name" placeholder="Name" ng-required="true">
 			</div>
 
 			<div class="form-group">
-				<input class="form-control" type="email" ng-model="tenant.email" name="email" placeholder="Enter Your Email" ng-required="true">
+				<input class="form-control" type="email" ng-model="tenant.email" name="email" placeholder="Email" ng-required="true">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="number" ng-model="tenant.phone" name="phone" placeholder="Phone Number" ng-required="true">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="text" ng-model="tenant.address" name="address" placeholder="Address" ng-required="true">
 			</div>
 			<div class="form-group">
 				<button class="btn btn-primary btn-block" ng-disabled="tenantForm.$invalid">CREATE TENANT</button>
