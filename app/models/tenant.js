@@ -10,7 +10,7 @@ const TenantSchema   = new Schema({
     email: String,
     phone: Number,
     address: String,
-    debt: Number
+    debt: {type: Number, default: 0}
 });
 
 const Tenant = mongoose.model('Tenant', TenantSchema);
