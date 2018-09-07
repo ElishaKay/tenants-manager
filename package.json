@@ -1,0 +1,34 @@
+{
+  "name": "uv-angularjs-nodejs-mongodb-crud",
+  "version": "1.0.0",
+  "description": "Bacis AngularJs-Nodejs-MongoDb CRUD operation using Mongoose NPM",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.4",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test": "mocha --recursive",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivarajnaidu/uv-angularjs-nodejs-mongodb-crud.git"
+  },
+  "author": "yuvaraj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shivarajnaidu/uv-angularjs-nodejs-mongodb-crud/issues"
+  },
+  "homepage": "https://github.com/shivarajnaidu/uv-angularjs-nodejs-mongodb-crud#readme"
+}

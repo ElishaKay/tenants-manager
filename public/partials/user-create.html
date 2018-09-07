@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-lg-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
+		<form id="user-form" ng-submit="createUser()" name="userForm">
+			<h4 class="form-heading text-center">CREATE USER</h4>
+			<div class="form-group">
+				<input class="form-control" type="text" ng-model="user.name" name="name" placeholder="Enter Your Name" ng-required="true">
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" type="email" ng-model="user.email" name="email" placeholder="Enter Your Email" ng-required="true">
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary btn-block" ng-disabled="userForm.$invalid">CREATE USER</button>
+			</div>
+		</form>
+		<div ng-class="{ 'bg-success': isSuccess, 'bg-danger': !isSuccess }" ng-if="isSubmitted">sfgf{{message}}</div>
+		<a href="#!/users" >See List Of All Users</a>
+	</div>
+</div>
