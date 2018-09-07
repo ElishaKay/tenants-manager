@@ -1,18 +1,18 @@
 <div class="row">
 	<div class="col-sm-6 col-md-4 col-lg-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
-		<div class="bg-info text-center" ng-if="users.length === 0">No Users</div>
-		<div class="list-group" ng-if="users.length > 0">
-			<a class="list-group-item" ng-repeat="user in users" ng-href="#!/users/profile/{{user.id}}" title="Click To See The User Details">{{user.name}} 
-			    <button type="button" class="btn btn-info btn-sm pull-right action-user-edit" title="Click To Edit User" ng-click="goToUpdateUserView($event, user)">
+		<div class="bg-info text-center" ng-if="tenants.length === 0">No Tenants</div>
+		<div class="list-group" ng-if="tenants.length > 0">
+			<a class="list-group-item" ng-repeat="tenant in tenants" ng-href="#!/tenants/profile/{{tenant.id}}" title="Click To See The Tenant Details">{{tenant.name}} 
+			    <button type="button" class="btn btn-info btn-sm pull-right action-tenant-edit" title="Click To Edit Tenant" ng-click="goToUpdateTenantView($event, tenant)">
 					<span class="glyphicon glyphicon-edit"></span>
 				</button>
-				<button type="button" class="btn btn-danger btn-sm pull-right action-user-delete" title="Click To Delete User" ng-click="deleteUser($event, user)">
+				<button type="button" class="btn btn-danger btn-sm pull-right action-tenant-delete" title="Click To Delete Tenant" ng-click="deleteTenant($event, tenant)">
 					<span class="glyphicon glyphicon-trash"></span>
 				</button>
 			</a>
 		</div>
 		<br>
-		<a class="btn btn-warning" href="#!/users/new" >Create New User</a>
+		<a class="btn btn-warning" href="#!/tenants/new" >Create New Tenant</a>
 
 	</div>
 </div>

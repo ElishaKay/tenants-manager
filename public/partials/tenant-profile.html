@@ -1,28 +1,28 @@
 <div class="row">
 	<div class="col-sm-6 col-md-4 col-lg-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
-		<div id="user-detail-table" class="table-responsive" ng-if="user">
+		<div id="tenant-detail-table" class="table-responsive" ng-if="tenant">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					{{user.name}}
-					<button type="button" class="btn btn-info btn-sm pull-right action-user-edit" title="Click To Edit User" ng-click="goToUpdateUserView($event, user)">
+					{{tenant.name}}
+					<button type="button" class="btn btn-info btn-sm pull-right action-tenant-edit" title="Click To Edit Tenant" ng-click="goToUpdateTenantView($event, tenant)">
 						<span class="glyphicon glyphicon-edit"></span>
 					</button>
-					<button type="button" class="btn btn-danger btn-sm pull-right action-user-delete" title="Click To Delete User" ng-click="deleteUser(user)">
+					<button type="button" class="btn btn-danger btn-sm pull-right action-tenant-delete" title="Click To Delete Tenant" ng-click="deleteTenant(tenant)">
 						<span class="glyphicon glyphicon-trash"></span>
 					</button>
 					<br>
 				</div>
 				<table class="table table-hover">
-					<tr ng-repeat="prop in userProperties">
+					<tr ng-repeat="prop in tenantProperties">
 						<td>{{prop}}</td>
-						<td>{{user[prop]}}</td>
+						<td>{{tenant[prop]}}</td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		<a href="#!/users" >See List Of All Users</a>
+		<a href="#!/tenants" >See List Of All Tenants</a>
 
-		<div ng-if="!user" class="bg-danger">{{message}}</div>
+		<div ng-if="!tenant" class="bg-danger">{{message}}</div>
 
 		<div ng-if="isSubmitted">
 			<div ng-class="{ 'bg-success': isSuccess, 'bg-danger': !isSuccess }">{{message}}</div>
