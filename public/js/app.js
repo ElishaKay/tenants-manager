@@ -6,23 +6,23 @@
 
 	function config ($routeProvider) {
 		$routeProvider
-		.when('/users/new', {
-			templateUrl: '../partials/user-create.html',
-			controller: 'userCreationCtrl'
+		.when('/tenants/new', {
+			templateUrl: '../partials/tenant-create.html',
+			controller: 'tenantCreationCtrl'
 		})
-		.when('/users', {
-			templateUrl: '../partials/user-list.html',
-			controller: 'userListCtrl'
+		.when('/tenants', {
+			templateUrl: '../partials/tenant-list.html',
+			controller: 'tenantListCtrl'
 		})
-		.when('/users/profile/:userId', {
-			templateUrl: '../partials/user-profile.html',
-			controller: 'userProfileCtrl'
+		.when('/tenants/profile/:tenantId', {
+			templateUrl: '../partials/tenant-profile.html',
+			controller: 'tenantProfileCtrl'
 		})
-		.when('/users/edit/:userId', {
-			templateUrl: '../partials/user-update.html',
-			controller: 'userUpdateCtrl'
+		.when('/tenants/edit/:tenantId', {
+			templateUrl: '../partials/tenant-update.html',
+			controller: 'tenantUpdateCtrl'
 		})
-		.otherwise('/users/new')
+		.otherwise('/tenants/new')
 	}
 
 })();

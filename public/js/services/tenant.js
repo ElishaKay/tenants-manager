@@ -2,9 +2,9 @@
 (function () {
 	angular.module('myApp')
 
-	.factory('User', ['$http', '$window', User]);
+	.factory('Tenant', ['$http', '$window', Tenant]);
 
-	function User ($http, $window) {
+	function Tenant ($http, $window) {
 
 		function generateObjectForNotifyJs (message, isSuccess) {
 			var NofyJsObj = {
@@ -23,12 +23,12 @@
 
 		function create (name, email) {
 			if (name && email) {
-				var user = {
+				var tenant = {
 					name: name,
 					email: email
 				};
 
-				return $http.post('/api/users', user)
+				return $http.post('/api/tenants', tenant)
 				.then(function (res) {
 					var data = res.data;
 					if (data) {
@@ -40,9 +40,9 @@
 			}
 		}
 
-		function get (userId) {
-			if (userId) {
-				var apiUrl = '/api/users/' + userId;
+		function get (tenantId) {
+			if (tenantId) {
+				var apiUrl = '/api/tenants/' + tenantId;
 				return $http.get(apiUrl)
 				.then(function (res) {
 					var data = res.data;
@@ -50,7 +50,7 @@
 						var message   = data.message;
 						var isSuccess = data.success;
 						var resData   = generateObjectForNotifyJs(message, isSuccess);
-						resData.user  = data.user;
+						resData.tenant  = data.tenant;
 						return resData;
 					}
 				})
@@ -58,25 +58,25 @@
 		}
 
 		function getAll () {
-			return $http.get('/api/users/')
+			return $http.get('/api/tenants/')
 			.then(function (res) {
 				var data = res.data;
 				if (data) {
-					return data.users;
+					return data.tenants;
 				} else {
 					return [];
 				}
 			})
 		}
 
-		function update (name, email, userId) {
-			if (userId) {
-				var apiUrl = '/api/users/' + userId;
-				var user = {
+		function update (name, email, tenantId) {
+			if (tenantId) {
+				var apiUrl = '/api/tenants/' + tenantId;
+				var tenant = {
 					name: name,
 					email: email
 				};
-				return $http.put(apiUrl, user)
+				return $http.put(apiUrl, tenant)
 				.then(function (res) {
 					var data = res.data;
 					if (data) {
@@ -88,9 +88,9 @@
 			}
 		}
 
-		function remove (userId) {
-			if (userId) {
-				var apiUrl = '/api/users/' + userId;
+		function remove (tenantId) {
+			if (tenantId) {
+				var apiUrl = '/api/tenants/' + tenantId;
 				return $http.delete(apiUrl)
 				.then(function (res) {
 					var data = res.data;

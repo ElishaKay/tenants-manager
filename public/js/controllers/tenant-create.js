@@ -2,12 +2,12 @@
 (function () {
 	angular.module('myApp')
 
-	.controller('userCreationCtrl', ['$scope', '$timeout', 'User', userCreationCtrl]);
+	.controller('tenantCreationCtrl', ['$scope', '$timeout', 'Tenant', tenantCreationCtrl]);
 
-	function userCreationCtrl ($scope, $timeout, User) {
-		$scope.user = {};
-		$scope.createUser = function () {
-			User.create($scope.user.name, $scope.user.email)
+	function tenantCreationCtrl ($scope, $timeout, Tenant) {
+		$scope.tenant = {};
+		$scope.createTenant = function () {
+			Tenant.create($scope.tenant.name, $scope.tenant.email)
 			.then(function (data) {
 				// console.log(data);
 				$scope.isSubmitted = true;
@@ -18,7 +18,7 @@
 				$.notify(data.message, data.colorClass);
 				
 				if (data.isSuccess) {
-					$scope.user = {}
+					$scope.tenant = {}
 				}
 
 				$timeout(hideSubmitMessage, 1000);

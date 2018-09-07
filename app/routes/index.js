@@ -3,5 +3,5 @@
 const tenantsCtrl = require('./tenants');
 
 module.exports = app => {
-   app.use('/api/users', tenantsCtrl);
+   app.use('/api/tenants', tenantsCtrl);
 };

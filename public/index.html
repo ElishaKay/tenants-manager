@@ -25,14 +25,14 @@
 	<script src="js/directives/nav-active.js"></script>
 
     <!-- App Services -->
-	<script src="js/services/user.js"></script>
+	<script src="js/services/tenant.js"></script>
 	
     <!-- App Controllers -->
 	<script src="js/controllers/main.js"></script>
-	<script src="js/controllers/user-create.js"></script>
-	<script src="js/controllers/user-list.js"></script>
-	<script src="js/controllers/user-profile.js"></script>
-	<script src="js/controllers/user-update.js"></script>
+	<script src="js/controllers/tenant-create.js"></script>
+	<script src="js/controllers/tenant-list.js"></script>
+	<script src="js/controllers/tenant-profile.js"></script>
+	<script src="js/controllers/tenant-update.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="mainCtrl">
  <nav class="navbar navbar-inverse">
@@ -47,8 +47,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#!/users/new" nav-active>Create New User</a></li>
-        <li><a ng-href="#!/users" nav-active>User List</a></li>
+        <li class="active"><a href="#!/tenants/new" nav-active>Create New Tenant</a></li>
+        <li><a ng-href="#!/tenants" nav-active>Tenant List</a></li>
       </ul>
     
     </div>
