@@ -12,6 +12,8 @@
 			$scope.tenants = tenants;
 		})
 
+		$scope.selectedSearch = 'allTenants';
+
 		$scope.deleteTenant = function deleteTenant (e, tenant) {
 			e.preventDefault();
 			var tenantId = tenant.id;
