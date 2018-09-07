@@ -1,28 +1,28 @@
 'use strict';
 const supertest = require('supertest');
-const usersApi  = supertest('http://localhost:3000/api/users');
+const tenantsApi  = supertest('http://localhost:3000/api/tenants');
 
-describe('/api/users/', () => {
+describe('/api/tenants/', () => {
 
-	it('should return all existing users', function(done) {
-		usersApi.get('/')
+	it('should return all existing tenants', function(done) {
+		tenantsApi.get('/')
 		.expect(200)
 		.end((err, res) => {
 			if (err) return done(err);
             // console.log(res.body);
-            res.body.should.have.property('users').and.to.be.instanceof(Array);
+            res.body.should.have.property('tenants').and.to.be.instanceof(Array);
             done();
         });
 	});
 
-	it('should create new user', done => {
-		const user = {
-			name: 'test user',
-			email: 'testuser@example.com'
+	it('should create new tenant', done => {
+		const tenant = {
+			name: 'test tenant',
+			email: 'testtenant@example.com'
 		};
 
-		usersApi.post('/')
-		.send(user)
+		tenantsApi.post('/')
+		.send(tenant)
 		.expect(200)
 		.end((err, res) => {
 			if (err) return done(err);
@@ -33,14 +33,14 @@ describe('/api/users/', () => {
        });
 	});
 
-	it('should fail to create new user if email is not given', done => {
-		const user = {
-			name: 'test user',
+	it('should fail to create new tenant if email is not given', done => {
+		const tenant = {
+			name: 'test tenant',
 			email: ''
 		};
 
-		usersApi.post('/')
-		.send(user)
+		tenantsApi.post('/')
+		.send(tenant)
 		.expect(200)
 		.end((err, res) => {
 			if (err) return done(err);
@@ -51,14 +51,14 @@ describe('/api/users/', () => {
 		  });
 	});
 
-	it('should fail to create new user if name is not given', done => {
-		const user = {
+	it('should fail to create new tenant if name is not given', done => {
+		const tenant = {
 			name: '',
-			email: 'testuser@example.com'
+			email: 'testtenant@example.com'
 		};
 
-		usersApi.post('/')
-		.send(user)
+		tenantsApi.post('/')
+		.send(tenant)
 		.expect(200)
 		.end((err, res) => {
 			if (err) return done(err);
