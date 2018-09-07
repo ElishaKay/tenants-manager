@@ -7,7 +7,7 @@
 	function tenantCreationCtrl ($scope, $timeout, Tenant) {
 		$scope.tenant = {};
 		$scope.createTenant = function () {
-			Tenant.create($scope.tenant.name, $scope.tenant.email)
+			Tenant.create($scope.tenant.name, $scope.tenant.email, $scope.tenant.phone, $scope.tenant.address)
 			.then(function (data) {
 				// console.log(data);
 				$scope.isSubmitted = true;

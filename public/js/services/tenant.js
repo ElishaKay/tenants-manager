@@ -21,11 +21,13 @@
 			}
 		}
 
-		function create (name, email) {
-			if (name && email) {
+		function create (name, email, phone, address) {
+			if (name && email && phone && address) {
 				var tenant = {
 					name: name,
-					email: email
+					email: email,
+					phone: phone,
+					address: address
 				};
 
 				return $http.post('/api/tenants', tenant)

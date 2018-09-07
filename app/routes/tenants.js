@@ -40,7 +40,7 @@ router.route('/')
  .post((req, res) => {
 
  	const body = req.body;
-	// console.log(body)
+	console.log('create-tenant post',body);
 	let resData = {};
 
 	if ( body && body.name && body.email ) {
