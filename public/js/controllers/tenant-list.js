@@ -2,9 +2,9 @@
 (function () {
 	angular.module('myApp')
 
-	.controller('tenantListCtrl', ['$scope', '$location', '$filter', 'Tenant', tenantListCtrl]);
+	.controller('tenantListCtrl', ['$scope', '$location', 'Tenant', tenantListCtrl]);
 
-	function tenantListCtrl ($scope, $location, $filter, Tenant) {
+	function tenantListCtrl ($scope, $location, Tenant) {
 
 		Tenant.getAll()
 		.then(function (tenants) {

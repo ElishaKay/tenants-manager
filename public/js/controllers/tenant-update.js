@@ -33,7 +33,7 @@
 			var newAddress = $scope.tenant.address;
 			var newDebt = $scope.tenant.debt;
 
-			var isTenantChanged = (oldName !== newName) || (oldEmail !== newEmail) || (oldAddress !== newAddress) || (oldPhone !== newPhone) || (oldDebt !== newDebt) ;
+			var isTenantChanged = (oldName !== newName) || (oldEmail !== newEmail) || (oldAddress !== newAddress) || (oldPhone !== newPhone) || (oldDebt !== newDebt);
 
 			if (isTenantChanged) {
 				Tenant.update(newName, newEmail, newPhone, newAddress, newDebt, tenantId)
